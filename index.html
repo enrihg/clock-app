@@ -4,6 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
   <title>Clock App</title>
 </head>
 
@@ -15,27 +19,36 @@
         quos, autem beatae animi eligendi optio. Blanditiis, sint! Et dolores labore tenetur nam iste quae.
       </p>
       <button>RELOAD</button>
-      <div>Ada Lovelace</div>
+      <h5>Ada Lovelace</h5>
     </section>
 
     <!-- clock section -->
-    <section>
-      <div>GOOD MORNING ETC</div>
-      <h1>11.37</h1>
-      <div>IN LONDON UK</div>
+    <section class="clock">
+      <h4>GOOD MORNING ETC</h4>
+      <h1>11:37</h1>
+      <span>BST</span>
+      <h3>IN LONDON, UK</h3>
       <button>less</button>
     </section>
 
-    <!-- expandable section -->
-    <section>
-      <div>CURRENT TIMEZONE</div>
-      <div>Europe/London</div>
-      <div>DAY OF THE YEAR</div>
-      <div>295</div>
-      <div>DAY OF THE WEEK</div>
-      <div>5</div>
-      <div>WEEK NUMBER</div>
-      <div>42</div>
+    <!-- modal section -->
+    <section class="modal">
+      <div>
+        <h6>CURRENT TIMEZONE</h6>
+        <h2>Europe/London</h2>
+      </div>
+      <div>
+        <h6>DAY OF THE YEAR</h6>
+        <h2>295</h2>
+      </div>
+      <div>
+        <h6>DAY OF THE WEEK</h6>
+        <h2>5</h2>
+      </div>
+      <div>
+        <h6>WEEK NUMBER</h6>
+        <h2>42</h2>
+      </div>
     </section>
   </main>
 </body>

@@ -1,0 +1,29 @@
+.modal {
+    // display: grid;
+    // grid-template-columns: 1fr 1fr;
+
+    // padding: 3rem 0 3rem 0;
+    background-color: $clr-900;
+    
+    // /*esto lo pongo para que quede al fondo , luego borrarlo cuando no sea necesario*/
+    width: 90%;
+    position: absolute;
+    bottom: 0;
+
+    >div {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    h5 {
+        font-size: 1.25rem;
+    }
+
+    h6 {
+        font-size: 0.625rem;
+        font-weight: 400;
+        color: $clr-100;
+        letter-spacing: 2px;
+        line-height: 28px;
+    }
+}
