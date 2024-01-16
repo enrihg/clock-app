@@ -14,25 +14,35 @@
 <body>
   <main>
     <!-- random quote section -->
-    <section>
+    <section class="quote">
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis libero, ea, suscipit facilis ad corporis
         quos, autem beatae animi eligendi optio. Blanditiis, sint! Et dolores labore tenetur nam iste quae.
       </p>
-      <button>RELOAD</button>
+      <button class="btn-refresh">
+        <img src="/assets/desktop/icon-refresh.svg" alt="">
+      </button>
       <h5>Ada Lovelace</h5>
     </section>
 
     <!-- clock section -->
     <section class="clock">
-      <h4>GOOD MORNING ETC</h4>
-      <h1>11:37</h1>
-      <span>BST</span>
+      <div>
+        <img src="/assets/desktop/icon-moon.svg" alt="daytime icon">
+        <h4>GOOD MORNING</h4>
+      </div>
+      <div>
+        <h1>11:37</h1>
+        <span>BST</span>
+      </div>
       <h3>IN LONDON, UK</h3>
-      <button>less</button>
+      <button class="btn-lessMore">
+        LESS
+        <img src="/assets/desktop/icon-arrow-up.svg" alt="">
+      </button>
     </section>
 
     <!-- modal section -->
-    <section class="modal">
+    <section class="modal display-none">
       <div>
         <h6>CURRENT TIMEZONE</h6>
         <h2>Europe/London</h2>
@@ -51,6 +61,8 @@
       </div>
     </section>
   </main>
+
+  <script src="app.js"></script>
 </body>
 
 </html>

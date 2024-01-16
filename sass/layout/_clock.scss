@@ -1,0 +1,41 @@
+.clock {
+    display: grid;
+    position: relative;
+    bottom: 2.5rem;
+    margin: 6.25rem 2.5rem 0 1.625rem;    
+
+    :first-child {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    :nth-child(2) {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+    
+    }
+
+    .btn-lessMore {
+        border-radius: 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        //cambiar esto
+        max-height: 50px;
+        max-width: 115px;
+
+        padding: 3px 4px 4px 21px;
+        margin-top: 3rem;
+
+        font-family: inherit;
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: $clr-700;
+        border-style: none;
+        cursor: pointer;
+        letter-spacing: 3.75px;
+    }
+}

@@ -1,15 +1,16 @@
 body {
     font-family: 'Inter', sans-serif;   
     color: $clr-100;
-   
 }
 
 main {
-    background-image: url('/assets/mobile/bg-image-nighttime.jpg');
-    padding: 20px;
-    background-size: cover;
+    display: grid;
+
     /*ver si la altura no traerá problemas luego*/
-    height: 100%;
+    height: 100vh;
+
+    background-image: url('/assets/mobile/bg-image-nighttime.jpg');
+    background-size: cover;
 }
 
 h1 {

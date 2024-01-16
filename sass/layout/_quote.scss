@@ -1,0 +1,20 @@
+.quote {
+    display: grid;
+    grid-template-columns: 1fr 18px;
+    column-gap: 1rem;
+    margin: 2rem 1.5rem 0 1.5rem;
+
+    .btn-refresh{
+        width: 17px;
+        height: 17px;
+        padding: 0;
+        border-style: none;
+        cursor: pointer;
+        background: none;
+    }
+
+    h5 {
+        /*cambiarlo luego*/
+        margin-top: -1.5rem;
+    }
+}

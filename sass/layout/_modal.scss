@@ -1,14 +1,10 @@
 .modal {
-    // display: grid;
+    display: grid;
+    row-gap: 1rem;
     // grid-template-columns: 1fr 1fr;
 
-    // padding: 3rem 0 3rem 0;
+    padding: 3rem 1.5rem 3rem 1.5rem;
     background-color: $clr-900;
-    
-    // /*esto lo pongo para que quede al fondo , luego borrarlo cuando no sea necesario*/
-    width: 90%;
-    position: absolute;
-    bottom: 0;
 
     >div {
         display: flex;
