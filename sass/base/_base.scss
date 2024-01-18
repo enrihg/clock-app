@@ -1,6 +1,6 @@
 body {
     font-family: 'Inter', sans-serif;   
-    color: $clr-100;
+    color: var(--clr-100);
 }
 
 main {
@@ -9,45 +9,50 @@ main {
     /*ver si la altura no traerá problemas luego*/
     height: 100vh;
 
-    background-image: url('/assets/mobile/bg-image-nighttime.jpg');
+    background-image: var(--bg-img-night);
     background-size: cover;
 }
 
 h1 {
-    font-size: 6.25rem;
+    font-size: var(--fs-h1);
+    letter-spacing: var(--ls-h1);
+    line-height: var(--lh-h1);
 }
 
 h2 {
-    font-size: 1.25rem;
+    font-size: var(--fs-h2);
+    letter-spacing: var(--ls-h2);
+    line-height: var(--lh-h2);
 }
 
 h3 {
-    font-size: 0.9375rem;
-    letter-spacing: 3px;
-    line-height: 1.75rem;
+    font-size: var(--fs-h3);
+    letter-spacing: var(--ls-h3);
+    line-height: var(--lh-h3);
 }
 
 h4 {
-    font-size: 0.9375rem;
+    font-size: var(--fs-h4);
     font-weight: 400;
-    letter-spacing: 3px;
-    line-height: 1.5625rem;
+    letter-spacing: var(--ls-h4);
+    line-height: var(--lh-h4);
 }
 
 h5 {
-    font-size: 0.75rem;
-    line-height: 1.375rem;
+    font-size: var(--fs-h5);
+    letter-spacing: var(--ls-h5);
+    line-height: var(--lh-h5);
 }
 
 h6 {
-    font-size: 0.625rem;
+    font-size: var(--fs-h6);
     font-weight: 400;
-    color: $clr-100;
-    letter-spacing: 2px;
-    line-height: 28px;
+    color: var(--clr-100);
+    letter-spacing: var(--ls-h6);
+    line-height: var(--lh-h6);
 }
 
 p {
-    font-size: 0.75rem;
-    line-height: 1.375rem;
+    font-size: var(--fs-p);
+    line-height: var(--lh-p);
 }

@@ -1,25 +1,22 @@
 .modal {
     display: grid;
-    row-gap: 1rem;
-    // grid-template-columns: 1fr 1fr;
-
     padding: 3rem 1.5rem 3rem 1.5rem;
-    background-color: $clr-900;
+    background-color: var(--clr-900);
+    backdrop-filter: blur(20.387px);
 
-    >div {
+    .wrapper {
         display: flex;
         justify-content: space-between;
     }
+}
 
-    h5 {
-        font-size: 1.25rem;
-    }
+@media screen and (width > $break-m) {
+    .modal {
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
 
-    h6 {
-        font-size: 0.625rem;
-        font-weight: 400;
-        color: $clr-100;
-        letter-spacing: 2px;
-        line-height: 28px;
+        .wrapper {
+            flex-direction: column;
+        }
     }
 }
