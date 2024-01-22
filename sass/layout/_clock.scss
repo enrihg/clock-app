@@ -10,12 +10,26 @@
         align-items: center;
     }
 
-    :nth-child(2) { /*ver si se puede reemplazar por algún wrapper*/
+    :nth-child(2) {
         display: flex;
         justify-content: start;
         align-items: baseline;
         column-gap: 0.8125rem;
+    }
 
+    /*Cambia el ícono según sea de dia o de noche*/
+    .daytime-icon {
+        width: 23.5px;
+        height: 24px;
+        background-repeat: no-repeat;
+        
+        &.is-day {
+            background-image: url('/assets/desktop/icon-sun.svg');
+        }
+
+        &.is-night {
+            background-image: url('/assets/desktop/icon-moon.svg');
+        }
     }
 
     .btn-lessMore {

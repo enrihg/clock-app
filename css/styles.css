@@ -1,6 +1,7 @@
 @charset "UTF-8";
 :root {
   /*Background image*/
+  --bg-img-day: url("/assets/mobile/bg-image-daytime.jpg");
   --bg-img-night: url("/assets/mobile/bg-image-nighttime.jpg");
   --clr-100: hsl(0, 0%, 100%);
   --clr-700: hsl(0, 0%, 19%);
@@ -33,6 +34,7 @@
 /*Breakpoints*/
 @media screen and (width > 46rem) {
   :root {
+    --bg-img-day: url("/assets/tablet/bg-image-daytime.jpg");
     --bg-img-night: url("/assets/tablet/bg-image-nighttime.jpg");
     --fs-h1: 11rem;
     --fs-h2: 2.5rem;
@@ -52,6 +54,7 @@
 }
 @media screen and (width > 61rem) {
   :root {
+    --bg-img-day: url("/assets/desktop/bg-image-daytime.jpg");
     --bg-img-night: url("/assets/desktop/bg-image-nighttime-edit.jpg");
     --fs-h1: 12.5rem;
     --fs-h2: 3.5rem;
@@ -113,10 +116,15 @@ body {
 
 main {
   display: grid;
-  /*ver si la altura no traerá problemas luego*/
   height: 100vh;
-  background-image: var(--bg-img-night);
+  /*If it's daytime it applies --bg-img-day, if it's nightime applies --bg-img-night*/
   background-size: cover;
+}
+main.is-day {
+  background-image: var(--bg-img-day);
+}
+main.is-night {
+  background-image: var(--bg-img-night);
 }
 
 h1 {
@@ -187,17 +195,29 @@ p {
   position: relative;
   bottom: 2.5rem;
   margin: 6.25rem 2.5rem 0 1.625rem;
+  /*Cambia el ícono según sea de dia o de noche*/
 }
 .clock :first-child {
   display: flex;
   gap: 1rem;
   align-items: center;
 }
-.clock :nth-child(2) { /*ver si se puede reemplazar por algún wrapper*/
+.clock :nth-child(2) {
   display: flex;
   justify-content: start;
   align-items: baseline;
   column-gap: 0.8125rem;
+}
+.clock .daytime-icon {
+  width: 23.5px;
+  height: 24px;
+  background-repeat: no-repeat;
+}
+.clock .daytime-icon.is-day {
+  background-image: url("/assets/desktop/icon-sun.svg");
+}
+.clock .daytime-icon.is-night {
+  background-image: url("/assets/desktop/icon-moon.svg");
 }
 .clock .btn-lessMore {
   display: flex;

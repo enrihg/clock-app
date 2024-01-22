@@ -5,11 +5,17 @@ body {
 
 main {
     display: grid;
-
-    /*ver si la altura no traerá problemas luego*/
     height: 100vh;
 
-    background-image: var(--bg-img-night);
+    /*If it's daytime it applies --bg-img-day, if it's nightime applies --bg-img-night*/
+    &.is-day {
+        background-image: var(--bg-img-day);
+    }
+
+    &.is-night {
+        background-image: var(--bg-img-night);
+    }
+
     background-size: cover;
 }
 

@@ -45,7 +45,7 @@ const timezone = document.querySelector('.timezone');
 function geolocalization() {
     fetch('http://worldtimeapi.org/api/ip')
         .then((res) => {
-            console.log('GEOLOCALIZATION RESOLVED',res);
+            console.log('GEOLOCALIZATION RESOLVED', res);
             return res.json();
         })
         .then((data) => {
@@ -65,15 +65,35 @@ geolocalization();
 
 
 //Sets the greeting acording to the hour
-let hour = 5;
+let hour = 19;
 const greeting = document.querySelector('.greeting');
 
 function greeter(hour) {
     console.log(hour);
     if (5 <= hour && hour < 12) greeting.innerText = 'GOOD MORNING';
-        else if (12 <= hour && hour < 18) greeting.innerText = 'GOOD AFTERNOON';
-        else greeting.innerText = 'GOOD EVENING';
+    else if (12 <= hour && hour < 18) greeting.innerText = 'GOOD AFTERNOON';
+    else greeting.innerText = 'GOOD EVENING';
     console.log(greeting);
 }
 
 greeter(hour);
+
+//Sets day or night variable
+const main = document.querySelector('main');
+const daytimeIcon = document.querySelector('.daytime-icon');
+
+function isDayOrNight(hour) {
+    if (5 <= hour && hour < 18) {
+        daytimeIcon.classList.add('is-day');
+        daytimeIcon.classList.remove('is-night');
+        main.classList.add('is-day');
+        main.classList.remove('is-night');
+    } else {
+        daytimeIcon.classList.add('is-night');
+        daytimeIcon.classList.remove('is-day');
+        main.classList.add('is-night');
+        main.classList.remove('is-day');
+    }
+}
+
+isDayOrNight(hour);
