@@ -62,3 +62,18 @@ function geolocalization() {
 }
 
 geolocalization();
+
+
+//Sets the greeting acording to the hour
+let hour = 5;
+const greeting = document.querySelector('.greeting');
+
+function greeter(hour) {
+    console.log(hour);
+    if (5 <= hour && hour < 12) greeting.innerText = 'GOOD MORNING';
+        else if (12 <= hour && hour < 18) greeting.innerText = 'GOOD AFTERNOON';
+        else greeting.innerText = 'GOOD EVENING';
+    console.log(greeting);
+}
+
+greeter(hour);
