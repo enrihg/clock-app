@@ -41,6 +41,8 @@ const weekDay = document.querySelector('.week-day');
 const yearDay = document.querySelector('.year-day');
 const timezone = document.querySelector('.timezone');
 
+let ip;
+
 //Geolocalization data
 function geolocalization() {
     fetch('http://worldtimeapi.org/api/ip')
@@ -54,6 +56,12 @@ function geolocalization() {
             weekDay.innerText = data.day_of_week;
             yearDay.innerText = data.day_of_year;
             timezone.innerText = data.timezone;
+            ip = data.client_ip;
+            setHour(data.datetime);
+
+        })
+        .then(() => {
+            setCityAndCountry();
         })
         .catch((e) => {
             console.log('GEOLOCALIZATION ERROR', e);
@@ -62,10 +70,47 @@ function geolocalization() {
 }
 
 geolocalization();
+setInterval(geolocalization, 60000);
+
+const cityAndCountry = document.querySelector('.city-country');
+
+//Sets the city location and country
+function setCityAndCountry() {
+    fetch(`https://ipapi.co/${ip}/json`)
+        .then((res) => {
+            console.log('IP RESPONSE OK');
+            return res.json();
+        })
+        .then((data) => {
+            console.log(data);
+            cityAndCountry.innerText = `IN ${data.city}, ${data.country_name}`.toUpperCase();
+        })
+        .catch((e) => {
+            console.log('IP ERROR!!', e);
+        })
+}
+
+
+//Sets the hour
+const time = document.querySelector('.hour');
+
+function setHour(dateTime) {
+    console.log(dateTime);
+    let date = new Date(dateTime);
+    console.log(date);
+    const [hour, minutes] = [date.getHours(), date.getMinutes()];
+    console.log(hour, minutes);
+    time.innerText = `${hour}:${minutes}`;
+}
+
+
+
 
 
 //Sets the greeting acording to the hour
-let hour = 19;
+
+let hour = time; //cambiar esto de acá/////////////////////////
+
 const greeting = document.querySelector('.greeting');
 
 function greeter(hour) {
