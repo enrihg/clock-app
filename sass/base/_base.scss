@@ -1,13 +1,14 @@
 body {
     font-family: 'Inter', sans-serif;   
     color: var(--clr-100);
+    overflow: hidden; //it helps to hide the modal
 }
 
 main {
     display: grid;
     height: 100vh;
 
-    /*If it's daytime it applies --bg-img-day, if it's nightime applies --bg-img-night*/
+    /*if it's daytime it applies --bg-img-day, if it's nightime applies --bg-img-night*/
     &.is-day {
         background-image: var(--bg-img-day);
     }
@@ -61,4 +62,20 @@ h6 {
 p {
     font-size: var(--fs-p);
     line-height: var(--lh-p);
+}
+
+
+//it's used as a layer over the day background image to give it 
+.filter {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-color: hsl(0, 0%, 0%, 0.4);
+}
+
+:root:has(.is-night) {
+    .filter {
+        display: none;
+    }
 }

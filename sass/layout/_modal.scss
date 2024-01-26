@@ -1,14 +1,84 @@
 .modal {
     display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "a b"
+        "c d"
+        "f g"
+        "h i";
+    row-gap: 1rem;
     padding: 3rem 1.5rem 3rem 1.5rem;
     background-color: var(--clr-900);
     backdrop-filter: blur(20.387px);
+    z-index: 1;
 
-    .wrapper {
-        display: flex;
-        justify-content: space-between;
+    transition: 0.3s;
+
+    &.show {
+        transform: translateY(0px);
+    }
+
+    &.hide {
+        visibility: hidden;
+        transform: translateY(800px);
+        position: absolute;
+        bottom: 0;
+    }
+
+    h2 {
+        text-align: right;
+    }
+
+}
+
+.modal-grid-area__1 {
+    grid-area: a;
+}
+
+.modal-grid-area__2 {
+    grid-area: b;
+}
+
+.modal-grid-area__3 {
+    grid-area: c;
+}
+
+.modal-grid-area__4 {
+    grid-area: d;
+}
+
+.modal-grid-area__5 {
+    grid-area: f;
+}
+
+.modal-grid-area__6 {
+    grid-area: g;
+}
+
+.modal-grid-area__7 {
+    grid-area: h;
+}
+
+.modal-grid-area__8 {
+    grid-area: i;
+}
+
+
+:root:has(.is-day) {
+
+    .modal {
+        background-color: hsla(0, 0%, 100%, 0.75);
+
+        h2 {
+            color: var(--clr-900);
+        }
+
+        h6 {
+            color: var(--clr-700);
+        }
     }
 }
+
 
 @media screen and (width > $break-m) {
     .modal {

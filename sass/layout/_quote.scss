@@ -1,8 +1,26 @@
 .quote {
     display: grid;
     grid-template-columns: 1fr 18px;
+    grid-template-rows: auto 1fr;
     column-gap: 1rem;
+    height: 150px;
     margin: 2rem 1.5rem 0 1.5rem;
+    z-index: 1;
+    transition: 0.3s;
+
+    &.show {   
+            transform: translateY(0px);
+        }
+        
+    &.hide {
+        transform: translateY(-500px);
+        position: absolute;
+    }
+
+    .wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
 
     .btn-refresh{
         width: 17px;
@@ -14,7 +32,6 @@
     }
 
     h5 {
-        /*cambiarlo luego*/
-        margin-top: -1.5rem;
+        margin-top: 0.5rem;
     }
 }

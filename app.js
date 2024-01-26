@@ -32,6 +32,7 @@ let date;
 initialLoad();
 updateHour();
 
+//load the page with data
 async function initialLoad() {
     getRandomQuote();
     await fetchGeolocalizationData();
@@ -130,6 +131,7 @@ function greeter() {
     else if (12 <= hour && hour < 18) greeting = 'GOOD AFTERNOON';
     else greeting = 'GOOD EVENING';
     return greeting;
+    
 }
 
 //sets day or night CSS class
@@ -147,11 +149,15 @@ function isDayOrNight() {
     }
 }
 
+const arrowIcon = document.querySelector('.arrow-icon');
 //shows/hide the modal and quote section when clicking the less/more button
 btnLessMore.addEventListener('click', () => {
-    quote.classList.toggle('display-none');
-    modal.classList.toggle('display-none');
-    modal.classList.contains('display-none') ? btnLessMore.firstElementChild.innerText = 'MORE' : btnLessMore.firstElementChild.innerText = 'LESS';
+    quote.classList.toggle('show'); 
+    quote.classList.toggle('hide'); 
+    modal.classList.toggle('show'); 
+    modal.classList.toggle('hide');
+    modal.classList.contains('hide') ? btnLessMore.firstElementChild.innerText = 'MORE' : btnLessMore.firstElementChild.innerText = 'LESS';
+    arrowIcon.classList.toggle('arrow-down');
 })
 
 //gives a random quote when clicking the refresh button

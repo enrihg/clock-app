@@ -14,7 +14,7 @@
 <body>
   <main>
     <!-- random quote section -->
-    <section class="quote">
+    <section class="quote show">
       <p class="quote-paragraph">
         <!-- quote inserted via JavaScript -->
       </p>
@@ -32,8 +32,11 @@
         <span class="daytime-icon is-day">
           <!-- icon showed depends whether is day or night -->
         </span>
-        <h4 class="greeting">
-          <!-- greeting inserted via JavaScript -->
+        <h4>
+          <span class="greeting">
+            <!-- greeting inserted via JavaScript -->
+          </span>
+          <span class="its-currently">, IT'S CURRENTLY</span>
         </h4>
       </div>
       <div>
@@ -50,41 +53,31 @@
         </h3>
         <button class="btn-lessMore">
           <span>MORE</span>
-          <img src="/assets/desktop/icon-arrow-up.svg" alt="arrow-icon">
+          <img class="arrow-icon" src="/assets/desktop/icon-arrow-up.svg" alt="arrow-icon">
         </button>
       </div>
     </section>
 
+    <div class="filter"></div>
+
     <!-- modal section -->
-    <section class="modal display-none">
-      <div>
-        <div class="wrapper">
-          <h6>CURRENT TIMEZONE</h6>
-          <h2 class="timezone">
-            <!-- current timezone inserted via Javascript -->
-          </h2>
-        </div>
-        <div class="wrapper">
-          <h6>DAY OF THE YEAR</h6>
-          <h2 class="year-day">
-            <!-- day of the year inserted via Javascript -->
-          </h2>
-        </div>
-      </div>
-      <div>
-        <div class="wrapper">
-          <h6>DAY OF THE WEEK</h6>
-          <h2 class="week-day">
-            <!-- day of the week inserted via Javascript -->
-          </h2>
-        </div>
-        <div class="wrapper">
-          <h6>WEEK NUMBER</h6>
-          <h2 class="week-number">
-            <!-- week number inserted via Javascript -->
-          </h2>
-        </div>
-      </div>
+    <section class="modal hide">
+      <h6 class="modal-grid-area__1">CURRENT TIMEZONE</h6>
+      <h2 class="timezone modal-grid-area__2">
+        <!-- current timezone inserted via Javascript -->
+      </h2>
+      <h6 class="modal-grid-area__3">DAY OF THE YEAR</h6>
+      <h2 class="year-day modal-grid-area__4">
+        <!-- day of the year inserted via Javascript -->
+      </h2>
+      <h6 class="modal-grid-area__5">DAY OF THE WEEK</h6>
+      <h2 class="week-day modal-grid-area__6">
+        <!-- day of the week inserted via Javascript -->
+      </h2>
+      <h6 class="modal-grid-area__7">WEEK NUMBER</h6>
+      <h2 class="week-number modal-grid-area__8">
+        <!-- week number inserted via Javascript -->
+      </h2>
     </section>
   </main>
 
