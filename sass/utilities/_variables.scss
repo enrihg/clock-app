@@ -44,8 +44,8 @@ $break-l: 61rem;
 
 @media screen and (width > $break-m) {
     :root {
-        --bg-img-day: url('../../assets/tablet/bg-image-daytime.jpg');
-        --bg-img-night: url('../../assets/tablet/bg-image-nighttime.jpg');
+        --bg-img-day: url('../assets/tablet/bg-image-daytime.jpg');
+        --bg-img-night: url('../assets/tablet/bg-image-nighttime.jpg');
 
         --fs-h1: 11rem;
         --fs-h2: 2.5rem;
