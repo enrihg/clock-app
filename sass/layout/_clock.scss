@@ -1,10 +1,11 @@
 .clock {
     display: grid;
-    row-gap: 1rem;
+    grid-template-columns: auto;
     position: relative;
     bottom: 2.5rem;
-    margin: 6.25rem 2.5rem 0 var(--margin-left);
+    margin: 6.25rem 2.5rem 0 var(--spacer-left);
     z-index: 1;
+    align-items: end;
 
     >:first-child {
         display: flex;
@@ -34,12 +35,14 @@
     }
 
     .btn-lessMore {
+        width: 125px;
+        height: 47px;
         display: flex;
         justify-content: space-between;
         align-items: center;
         gap: 0.8125rem;
         padding: 3px 4px 4px 18px;
-        margin-top: 3rem;
+        margin-top: 2rem;            
         border-radius: 1.5rem;
         border-style: none;
         color: var(--clr-700);
@@ -48,7 +51,7 @@
         font-size: 0.75rem;
         font-weight: 700;
         letter-spacing: 3.75px;
-
+       
         .arrow-icon {
             transition: 0.7s;
         }
@@ -60,33 +63,48 @@
 
     .utc {
         padding-bottom: 10px;
-        font-size: 0.9375rem;
+        font-size: var(--fs-p);
         text-align: center;
     }
 
-    @media screen and (width > $break-m) {
-        .its-currently {
-            display: initial;
-        }
-    }
-
-    @media screen and (width > $break-l) {
-        .wrapper {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .btn-lessMore {
-            margin-top: 0;
-        }
-    }
 }
 
 :root:has(.arrow-down) {
     .arrow-icon {
         transition: 0.7s;
         transform: rotateZ(0.5turn);
+    }
+}
+
+@media screen and (width > $break-m) {
+    .clock {
+
+        .its-currently {
+            display: initial;
+        }
+    
+        .btn-lessMore {
+            margin-top: 0;
+        }
+    }
+}
+
+@media screen and (width > $break-l) {
+    .clock {
+        grid-template-rows: 0.5fr 2fr 0.5fr;
+        grid-template-areas:"a"
+                            "b"
+                            "c";
+    }
+
+    .btn-lessMore {
+        justify-self: end;
+        align-self: center;
+        grid-area: c;
+    }
+
+    .city-country {
+        grid-area: c;
+        align-self: center;
     }
 }

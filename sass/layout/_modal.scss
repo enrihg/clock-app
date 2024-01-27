@@ -4,10 +4,10 @@
     grid-template-areas:
         "a b"
         "c d"
-        "f g"
-        "h i";
+        "e f"
+        "g h";
     row-gap: 1rem;
-    padding: 3rem 1.5rem 3rem 1.5rem;
+    padding: 3rem var(--spacer-right) 3rem var(--spacer-left);
     background-color: var(--clr-900);
     backdrop-filter: blur(20.387px);
     z-index: 1;
@@ -28,7 +28,6 @@
     h2 {
         text-align: right;
     }
-
 }
 
 .modal-grid-area__1 {
@@ -48,19 +47,19 @@
 }
 
 .modal-grid-area__5 {
-    grid-area: f;
+    grid-area: e;
 }
 
 .modal-grid-area__6 {
-    grid-area: g;
+    grid-area: f;
 }
 
 .modal-grid-area__7 {
-    grid-area: h;
+    grid-area: g;
 }
 
 .modal-grid-area__8 {
-    grid-area: i;
+    grid-area: h;
 }
 
 
@@ -80,13 +79,26 @@
 }
 
 
+@media screen and (width > $break-s) {
+    .modal {
+        grid-template-areas:
+        "a e"
+        "b f"
+        "c g"
+        "d h";
+        grid-template-columns: 55% 40%;
+        row-gap: 0;
+        column-gap: 2rem;
+        justify-items: left;
+        
+        h6 {
+            align-self: self-end;
+        }
+    }
+}       
+
 @media screen and (width > $break-m) {
     .modal {
-        grid-template-columns: 1fr 1fr;
-        justify-items: center;
-
-        .wrapper {
-            flex-direction: column;
-        }
+        column-gap: 3rem;
     }
 }

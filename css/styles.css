@@ -13,7 +13,7 @@
   --fs-h4: 0.9375rem;
   --fs-h5: 0.75rem;
   --fs-h6: 0.625rem;
-  --fs-p: 0.75rem;
+  --fs-p: 0.875rem;
   /*Line height*/
   --lh-h1: 1;
   --lh-h2: normal;
@@ -29,12 +29,21 @@
   --ls-h4: 3px;
   --ls-h5: normal;
   --ls-h6: 2px;
-  /*utility margin*/
-  --margin-left: 5%;
+  /*utility spacer*/
+  --spacer-left: 5%;
+  --spacer-right: 5%;
 }
 
 /*Breakpoints*/
-@media screen and (width > 46rem) {
+@media screen and (width > 36rem) {
+  :root {
+    --fs-h5: 1.125rem;
+    --lh-h5: 1.75rem;
+    --fs-p: 1.125rem;
+    --lh-p: 1.75rem;
+  }
+}
+@media screen and (width > 48rem) {
   :root {
     --bg-img-day: url("../assets/tablet/bg-image-daytime.jpg");
     --bg-img-night: url("../assets/tablet/bg-image-nighttime.jpg");
@@ -42,19 +51,16 @@
     --fs-h2: 2.5rem;
     --fs-h3: 1.125rem;
     --fs-h4: 1.125rem;
-    --fs-h5: 1.125rem;
     --fs-h6: 0.8125rem;
-    --fs-p: 1.125rem;
     --lh-h4: 1.75rem;
-    --lh-h5: 1.75rem;
-    --lh-p: 1.75rem;
     --ls-h1: -4.375px;
     --ls-h3: 3.6px;
     --ls-h4: 3.6px;
     --ls-h6: 2px;
+    --spacer-left: 8.33%;
   }
 }
-@media screen and (width > 61rem) {
+@media screen and (width > 75rem) {
   :root {
     --bg-img-day: url("../assets/desktop/bg-image-daytime.jpg");
     --bg-img-night: url("../assets/desktop/bg-image-nighttime-edit.jpg");
@@ -188,7 +194,7 @@ p {
   grid-template-rows: auto 1fr;
   column-gap: 1rem;
   height: 150px;
-  margin: 2rem 1.5rem 0 1.5rem;
+  margin: 2rem var(--spacer-right) 0 var(--spacer-left);
   z-index: 1;
   transition: 0.3s;
 }
@@ -206,6 +212,7 @@ p {
 .quote .btn-refresh {
   width: 17px;
   height: 17px;
+  margin-top: 7px;
   padding: 0;
   border-style: none;
   cursor: pointer;
@@ -215,13 +222,24 @@ p {
   margin-top: 0.5rem;
 }
 
+@media screen and (width > 48rem) {
+  .quote {
+    grid-template-columns: 85% 15%;
+  }
+}
+@media screen and (width > 75rem) {
+  .quote {
+    grid-template-columns: 50% 50%;
+  }
+}
 .clock {
   display: grid;
-  row-gap: 1rem;
+  grid-template-columns: auto;
   position: relative;
   bottom: 2.5rem;
-  margin: 6.25rem 2.5rem 0 var(--margin-left);
+  margin: 6.25rem 2.5rem 0 var(--spacer-left);
   z-index: 1;
+  align-items: end;
   /*Cambia el ícono según sea de dia o de noche*/
 }
 .clock > :first-child {
@@ -246,12 +264,14 @@ p {
   background-image: url("../assets/desktop/icon-moon.svg");
 }
 .clock .btn-lessMore {
+  width: 125px;
+  height: 47px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 0.8125rem;
   padding: 3px 4px 4px 18px;
-  margin-top: 3rem;
+  margin-top: 2rem;
   border-radius: 1.5rem;
   border-style: none;
   color: var(--clr-700);
@@ -269,24 +289,8 @@ p {
 }
 .clock .utc {
   padding-bottom: 10px;
-  font-size: 0.9375rem;
+  font-size: var(--fs-p);
   text-align: center;
-}
-@media screen and (width > 46rem) {
-  .clock .its-currently {
-    display: initial;
-  }
-}
-@media screen and (width > 61rem) {
-  .clock .wrapper {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .clock .btn-lessMore {
-    margin-top: 0;
-  }
 }
 
 :root:has(.arrow-down) .arrow-icon {
@@ -294,12 +298,35 @@ p {
   transform: rotateZ(0.5turn);
 }
 
+@media screen and (width > 48rem) {
+  .clock .its-currently {
+    display: initial;
+  }
+  .clock .btn-lessMore {
+    margin-top: 0;
+  }
+}
+@media screen and (width > 75rem) {
+  .clock {
+    grid-template-rows: 0.5fr 2fr 0.5fr;
+    grid-template-areas: "a" "b" "c";
+  }
+  .btn-lessMore {
+    justify-self: end;
+    align-self: center;
+    grid-area: c;
+  }
+  .city-country {
+    grid-area: c;
+    align-self: center;
+  }
+}
 .modal {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-areas: "a b" "c d" "f g" "h i";
+  grid-template-areas: "a b" "c d" "e f" "g h";
   row-gap: 1rem;
-  padding: 3rem 1.5rem 3rem 1.5rem;
+  padding: 3rem var(--spacer-right) 3rem var(--spacer-left);
   background-color: var(--clr-900);
   backdrop-filter: blur(20.387px);
   z-index: 1;
@@ -335,19 +362,19 @@ p {
 }
 
 .modal-grid-area__5 {
-  grid-area: f;
+  grid-area: e;
 }
 
 .modal-grid-area__6 {
-  grid-area: g;
+  grid-area: f;
 }
 
 .modal-grid-area__7 {
-  grid-area: h;
+  grid-area: g;
 }
 
 .modal-grid-area__8 {
-  grid-area: i;
+  grid-area: h;
 }
 
 :root:has(.is-day) .modal {
@@ -360,13 +387,21 @@ p {
   color: var(--clr-700);
 }
 
-@media screen and (width > 46rem) {
+@media screen and (width > 36rem) {
   .modal {
-    grid-template-columns: 1fr 1fr;
-    justify-items: center;
+    grid-template-areas: "a e" "b f" "c g" "d h";
+    grid-template-columns: 55% 40%;
+    row-gap: 0;
+    column-gap: 2rem;
+    justify-items: left;
   }
-  .modal .wrapper {
-    flex-direction: column;
+  .modal h6 {
+    align-self: self-end;
+  }
+}
+@media screen and (width > 48rem) {
+  .modal {
+    column-gap: 3rem;
   }
 }
 

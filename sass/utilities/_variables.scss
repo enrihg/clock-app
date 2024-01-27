@@ -15,7 +15,7 @@
     --fs-h4: 0.9375rem;
     --fs-h5: 0.75rem;
     --fs-h6: 0.625rem;
-    --fs-p: 0.75rem;
+    --fs-p: 0.875rem;
 
     /*Line height*/
     --lh-h1: 1;
@@ -34,35 +34,40 @@
     --ls-h5: normal;
     --ls-h6: 2px;
 
-    /*utility margin*/
-    --margin-left: 5%;
+    /*utility spacer*/
+    --spacer-left: 5%;
+    --spacer-right: 5%;
 }
 
-/*Breakpoints*/    
-$break-m: 46rem;
-$break-l: 61rem;
+/*Breakpoints*/
+$break-s: 36rem;  //576px    
+$break-m: 48rem;  //736px
+$break-l: 75rem;  //1200px
+
+@media screen and (width > $break-s) {
+   :root {
+    --fs-h5: 1.125rem;
+    --lh-h5: 1.75rem;
+    --fs-p: 1.125rem;
+    --lh-p: 1.75rem;
+    }
+}
 
 @media screen and (width > $break-m) {
     :root {
         --bg-img-day: url('../assets/tablet/bg-image-daytime.jpg');
         --bg-img-night: url('../assets/tablet/bg-image-nighttime.jpg');
-
         --fs-h1: 11rem;
         --fs-h2: 2.5rem;
         --fs-h3: 1.125rem;
         --fs-h4: 1.125rem;
-        --fs-h5: 1.125rem;
         --fs-h6: 0.8125rem;
-        --fs-p: 1.125rem;
-
         --lh-h4: 1.75rem;
-        --lh-h5: 1.75rem;
-        --lh-p: 1.75rem;
-
         --ls-h1: -4.375px;
         --ls-h3: 3.6px;
         --ls-h4: 3.6px;
         --ls-h6: 2px;
+        --spacer-left: 8.33%;
     }
 }
 
@@ -70,7 +75,6 @@ $break-l: 61rem;
     :root {
         --bg-img-day: url('../assets/desktop/bg-image-daytime.jpg');
         --bg-img-night: url('../assets/desktop/bg-image-nighttime-edit.jpg');
-
         --fs-h1: 12.5rem;
         --fs-h2: 3.5rem;
         --fs-h3: 1.5rem;
@@ -78,11 +82,9 @@ $break-l: 61rem;
         --fs-h5: 1.125rem;
         --fs-h6: 0.9375rem;
         --fs-p: 1.125rem;
-
         --lh-h4: 1.75rem;
         --lh-h5: 1.75rem;
         --lh-p: 1.75rem;
-
         --ls-h1: -5px;
         --ls-h3: 4.8px;
         --ls-h4: 4px;
