@@ -42,7 +42,7 @@ async function initialLoad() {
 
 //fetches the geolocalization data
 async function fetchGeolocalizationData() {
-    await fetch('http://worldtimeapi.org/api/ip')
+    await fetch('https://worldtimeapi.org/api/ip')
         .then((res) => {
             return res.json();
         })
