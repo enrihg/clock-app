@@ -1,8 +1,8 @@
 :root {
 
     /*Background image*/
-    --bg-img-day: url('../../assets/mobile/bg-image-daytime.jpg');
-    --bg-img-night: url('../../assets/mobile/bg-image-nighttime.jpg');
+    --bg-img-day: url('../assets/mobile/bg-image-daytime.jpg');
+    --bg-img-night: url('../assets/mobile/bg-image-nighttime.jpg');
 
     --clr-100: hsl(0, 0%, 100%);
     --clr-700: hsl(0, 0%, 19%);
@@ -68,8 +68,8 @@ $break-l: 61rem;
 
 @media screen and (width > $break-l) {
     :root {
-        --bg-img-day: url('../../assets/desktop/bg-image-daytime.jpg');
-        --bg-img-night: url('../../assets/desktop/bg-image-nighttime-edit.jpg');
+        --bg-img-day: url('../assets/desktop/bg-image-daytime.jpg');
+        --bg-img-night: url('../assets/desktop/bg-image-nighttime-edit.jpg');
 
         --fs-h1: 12.5rem;
         --fs-h2: 3.5rem;

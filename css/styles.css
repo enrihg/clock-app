@@ -1,8 +1,8 @@
 @charset "UTF-8";
 :root {
   /*Background image*/
-  --bg-img-day: url("../../assets/mobile/bg-image-daytime.jpg");
-  --bg-img-night: url("../../assets/mobile/bg-image-nighttime.jpg");
+  --bg-img-day: url("../assets/mobile/bg-image-daytime.jpg");
+  --bg-img-night: url("../assets/mobile/bg-image-nighttime.jpg");
   --clr-100: hsl(0, 0%, 100%);
   --clr-700: hsl(0, 0%, 19%);
   --clr-900: hsl(0, 0%, 0%, 0.75);
@@ -56,8 +56,8 @@
 }
 @media screen and (width > 61rem) {
   :root {
-    --bg-img-day: url("../../assets/desktop/bg-image-daytime.jpg");
-    --bg-img-night: url("../../assets/desktop/bg-image-nighttime-edit.jpg");
+    --bg-img-day: url("../assets/desktop/bg-image-daytime.jpg");
+    --bg-img-night: url("../assets/desktop/bg-image-nighttime-edit.jpg");
     --fs-h1: 12.5rem;
     --fs-h2: 3.5rem;
     --fs-h3: 1.5rem;
@@ -240,10 +240,10 @@ p {
   margin-right: 1rem;
 }
 .clock .daytime-icon.is-day {
-  background-image: url("/assets/desktop/icon-sun.svg");
+  background-image: url("../assets/desktop/icon-sun.svg");
 }
 .clock .daytime-icon.is-night {
-  background-image: url("/assets/desktop/icon-moon.svg");
+  background-image: url("../assets/desktop/icon-moon.svg");
 }
 .clock .btn-lessMore {
   display: flex;
