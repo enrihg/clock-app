@@ -16,6 +16,7 @@
     --fs-h5: 0.75rem;
     --fs-h6: 0.625rem;
     --fs-p: 0.875rem;
+    --fs-utc: 0.9375rem;
 
     /*Line height*/
     --lh-h1: 1;
@@ -36,20 +37,20 @@
 
     /*utility spacer*/
     --spacer-left: 5%;
-    --spacer-right: 5%;
 }
 
 /*Breakpoints*/
-$break-s: 36rem;  //576px    
-$break-m: 48rem;  //736px
-$break-l: 75rem;  //1200px
+$break-s: 36rem; //576px    
+$break-m: 48rem; //736px
+$break-l: 75rem; //1200px
 
 @media screen and (width > $break-s) {
-   :root {
-    --fs-h5: 1.125rem;
-    --lh-h5: 1.75rem;
-    --fs-p: 1.125rem;
-    --lh-p: 1.75rem;
+    :root {
+        --fs-h5: 1.125rem;
+        --lh-h5: 1.75rem;
+        --fs-p: 1.125rem;
+        --lh-p: 1.75rem;
+        --fs-utc: 1.5rem;
     }
 }
 
@@ -62,6 +63,7 @@ $break-l: 75rem;  //1200px
         --fs-h3: 1.125rem;
         --fs-h4: 1.125rem;
         --fs-h6: 0.8125rem;
+        --fs-utc: 2rem;
         --lh-h4: 1.75rem;
         --ls-h1: -4.375px;
         --ls-h3: 3.6px;
@@ -89,5 +91,6 @@ $break-l: 75rem;  //1200px
         --ls-h3: 4.8px;
         --ls-h4: 4px;
         --ls-h6: 3px;
+        --fs-utc: 2.5rem;
     }
 }

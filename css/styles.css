@@ -14,6 +14,7 @@
   --fs-h5: 0.75rem;
   --fs-h6: 0.625rem;
   --fs-p: 0.875rem;
+  --fs-utc: 0.9375rem;
   /*Line height*/
   --lh-h1: 1;
   --lh-h2: normal;
@@ -31,7 +32,6 @@
   --ls-h6: 2px;
   /*utility spacer*/
   --spacer-left: 5%;
-  --spacer-right: 5%;
 }
 
 /*Breakpoints*/
@@ -41,6 +41,7 @@
     --lh-h5: 1.75rem;
     --fs-p: 1.125rem;
     --lh-p: 1.75rem;
+    --fs-utc: 1.5rem;
   }
 }
 @media screen and (width > 48rem) {
@@ -52,6 +53,7 @@
     --fs-h3: 1.125rem;
     --fs-h4: 1.125rem;
     --fs-h6: 0.8125rem;
+    --fs-utc: 2rem;
     --lh-h4: 1.75rem;
     --ls-h1: -4.375px;
     --ls-h3: 3.6px;
@@ -78,6 +80,7 @@
     --ls-h3: 4.8px;
     --ls-h4: 4px;
     --ls-h6: 3px;
+    --fs-utc: 2.5rem;
   }
 }
 *,
@@ -190,11 +193,9 @@ p {
 
 .quote {
   display: grid;
-  grid-template-columns: 1fr 18px;
   grid-template-rows: auto 1fr;
-  column-gap: 1rem;
   height: 150px;
-  margin: 2rem var(--spacer-right) 0 var(--spacer-left);
+  margin: 2rem 5% 0 var(--spacer-left);
   z-index: 1;
   transition: 0.3s;
 }
@@ -205,14 +206,15 @@ p {
   transform: translateY(-500px);
   position: absolute;
 }
-.quote .wrapper {
+.quote div {
   display: flex;
-  justify-content: space-between;
 }
 .quote .btn-refresh {
   width: 17px;
   height: 17px;
   margin-top: 7px;
+  margin-left: 1rem;
+  flex-shrink: 0;
   padding: 0;
   border-style: none;
   cursor: pointer;
@@ -224,12 +226,18 @@ p {
 
 @media screen and (width > 48rem) {
   .quote {
-    grid-template-columns: 85% 15%;
+    margin-top: 7%;
+  }
+  p {
+    max-width: 80%;
   }
 }
 @media screen and (width > 75rem) {
-  .quote {
-    grid-template-columns: 50% 50%;
+  .btn-lessMore {
+    margin-right: 11.25%;
+  }
+  p {
+    max-width: 50%;
   }
 }
 .clock {
@@ -289,7 +297,7 @@ p {
 }
 .clock .utc {
   padding-bottom: 10px;
-  font-size: var(--fs-p);
+  font-size: var(--fs-utc);
   text-align: center;
 }
 
@@ -326,7 +334,7 @@ p {
   grid-template-columns: 1fr 1fr;
   grid-template-areas: "a b" "c d" "e f" "g h";
   row-gap: 1rem;
-  padding: 3rem var(--spacer-right) 3rem var(--spacer-left);
+  padding: 3rem 5% 3rem var(--spacer-left);
   background-color: var(--clr-900);
   backdrop-filter: blur(20.387px);
   z-index: 1;
