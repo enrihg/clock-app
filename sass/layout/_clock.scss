@@ -1,9 +1,6 @@
 .clock {
     display: grid;
-    grid-template-columns: auto;
-    position: relative;
-    bottom: 2.5rem;
-    margin: 6.25rem 2.5rem 0 var(--spacer-left);
+    margin: 6.25rem 2.5rem 2.5rem var(--spacer-left);
     z-index: 1;
     align-items: end;
 

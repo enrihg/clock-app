@@ -12,17 +12,12 @@
     backdrop-filter: blur(20.387px);
     z-index: 1;
 
-    transition: 0.3s;
-
     &.show {
-        transform: translateY(0px);
+        display: grid;
     }
 
     &.hide {
-        visibility: hidden;
-        transform: translateY(800px);
-        position: absolute;
-        bottom: 0;
+        display: none;
     }
 
     h2 {

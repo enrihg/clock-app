@@ -117,14 +117,16 @@ h6 {
 }
 
 body {
+  position: relative;
   font-family: "Inter", sans-serif;
   color: var(--clr-100);
-  overflow: hidden;
+  min-width: 375px;
+  min-height: 667px;
 }
 
 main {
   display: grid;
-  height: 100vh;
+  height: 100%;
   /*if it's daytime it applies --bg-img-day, if it's nightime applies --bg-img-night*/
   background-size: cover;
 }
@@ -220,6 +222,9 @@ p {
   cursor: pointer;
   background: none;
 }
+.quote .btn-refresh:hover {
+  filter: opacity(0.6);
+}
 .quote h5 {
   margin-top: 0.5rem;
 }
@@ -242,10 +247,7 @@ p {
 }
 .clock {
   display: grid;
-  grid-template-columns: auto;
-  position: relative;
-  bottom: 2.5rem;
-  margin: 6.25rem 2.5rem 0 var(--spacer-left);
+  margin: 6.25rem 2.5rem 2.5rem var(--spacer-left);
   z-index: 1;
   align-items: end;
   /*Cambia el ícono según sea de dia o de noche*/
@@ -338,16 +340,12 @@ p {
   background-color: var(--clr-900);
   backdrop-filter: blur(20.387px);
   z-index: 1;
-  transition: 0.3s;
 }
 .modal.show {
-  transform: translateY(0px);
+  display: grid;
 }
 .modal.hide {
-  visibility: hidden;
-  transform: translateY(800px);
-  position: absolute;
-  bottom: 0;
+  display: none;
 }
 .modal h2 {
   text-align: right;
