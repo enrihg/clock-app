@@ -274,12 +274,12 @@ p {
   background-image: url("../assets/desktop/icon-moon.svg");
 }
 .clock .btn-lessMore {
-  width: 125px;
+  max-width: max-content;
   height: 47px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 0.8125rem;
+  gap: 8px;
   padding: 3px 4px 4px 18px;
   margin-top: 2rem;
   border-radius: 1.5rem;
@@ -293,6 +293,9 @@ p {
 }
 .clock .btn-lessMore .arrow-icon {
   transition: 0.7s;
+}
+.clock .btn-lessMore:hover {
+  filter: brightness(150%);
 }
 .clock .its-currently {
   display: none;
